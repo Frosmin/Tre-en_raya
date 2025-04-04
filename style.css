@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: rgb(183, 183, 234);
+    text-align: center;
+    vertical-align: middle;
+    
+    font-size: 3vw;
+    height: 8vw;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.jugadores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2.5em;
+    order:1;
+}
+
+.jugador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#smg {
+    text-align: center;
+}
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 15vw);
+    grid-template-rows: repeat(3, 15vw);
+    justify-content: center;
+    order:2;
+}
+
+.celda {
+    background-color: rgb(228, 158, 158);
+    border: 1vw solid;
+}
+
+.reiniciar {
+    text-align: center;
+    order:3;
+}
+
+.container-text{
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+
+@media only screen and (min-width: 400px) {
+    body {
+      background-color:rgba(150, 217, 234, 0.172);
+    }
+
+    .container{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .tablero {
+        order: 3;
+    }
+    .reiniciar{
+        order:2;
+    }
+
+  }
