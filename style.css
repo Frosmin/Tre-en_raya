@@ -94,6 +94,19 @@ body{
 
 }
 
+.boton:hover{
+    background-color: rgb(150, 150, 234);
+}
+
+.celda{
+   width: 100%;
+   height: 100%;
+}
+
+.celda:hover{
+    background-color: rgb(150, 150, 234);
+}
+
 @media only screen and (min-width: 400px) {
     body {
         background-color:rgba(150, 217, 234, 0.172);
