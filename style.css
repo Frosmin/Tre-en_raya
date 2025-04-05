@@ -22,13 +22,14 @@ body{
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 5%;
 }
 
 .jugadores {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 2.5em;
+    font-size: 5vw;
     order:1;
 }
 
@@ -36,6 +37,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 60%;
 }
 
 .opciones {
@@ -54,6 +56,7 @@ body{
     grid-template-rows: repeat(3, 15vw);
     justify-content: center;
     order:2;
+    padding: 10%;
 }
 
 .celda {
@@ -81,6 +84,7 @@ body{
         flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
+
     }
     .tablero {
         order: 3;
