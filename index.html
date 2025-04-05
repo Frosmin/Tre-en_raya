@@ -12,15 +12,32 @@
 
         <div class="container">
                 <div class="jugadores">
+
                     <div id="j1" class="jugador">
-                        <button>E</button>
-                        <span>Pedro</span>
+                        <button id="myBtn">Cambiar nombre</button>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h3>Ingresa tu nombre</h3>
+                                <input type="text" id="nombreJugador" placeholder="Escribe tu nombre aquí">
+                                <button id="guardarNombre" class="boton" onclick="cambiarNombre(1)">Guardar</button>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Pedro</span>
+                        </div>
                         <span>0</span>
                     </div>
-
+                    
                     <div id="j2" class="jugador">
-                        <div>
-                            <button >E</button>
+                        <button id="myBtn">Cambiar nombre</button>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h3>Ingresa tu nombre</h3>
+                                <input type="text" id="nombreJugador" placeholder="Escribe tu nombre aquí">
+                                <button id="guardarNombre" class="boton" onclick="cambiarNombre(1)">Guardar</button>
+                            </div>
                         </div>
                         <div>
                             <span>Pedro</span>
@@ -61,7 +78,7 @@
                     <div class="celda">
                         <button class="celda" id="7"></button>
                     </div>
-                    <div class="celda" onclick="funciona()">
+                    <div class="celda" onclick="funciona(8)">
                         <!-- <button class="celda" id="8"></button> -->
                     </div>
                 </div>
@@ -72,6 +89,8 @@
             
             
         </div>
+
+        
     </body>
 </html>
 
