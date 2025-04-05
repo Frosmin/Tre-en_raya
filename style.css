@@ -1,10 +1,14 @@
 * {
     margin: 0;
     box-sizing: border-box;
-  }
+}
+
+
+
 
 body{
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -24,21 +28,26 @@ body{
     height: 100%;
     width: 100%;
     padding: 3%;
+    align-content: space-evenly;
+
 }
 
 .jugadores {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    font-size: 5vw;
-    order:1;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+
 }
 
 .jugador {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-size: 60%;
+    font-size: 100%;
+    gap: 10px;
 }
 
 .opciones {
@@ -56,7 +65,7 @@ body{
     grid-template-columns: repeat(3, 15vw);
     grid-template-rows: repeat(3, 15vw);
     justify-content: center;
-    order:2;
+    /* order:2; */
     padding: 10%;
     width: 100%;
     height: 100%;
@@ -69,7 +78,7 @@ body{
 
 .reiniciar {
     text-align: center;
-    order:3;
+    /* order:3; */
 }
 
 .container-text{
@@ -78,17 +87,40 @@ body{
     gap: 3vw;
 }
 
+.boton{
+    background-color: rgb(183, 183, 234);
+    font-size: 3vw;
+    cursor: pointer;
+
+}
+
 @media only screen and (min-width: 400px) {
     body {
-      background-color:rgba(150, 217, 234, 0.172);
+        background-color:rgba(150, 217, 234, 0.172);
     }
 
     .container{
         flex-direction: row;
-        align-items: center;
+        align-items: center; 
         justify-content: space-evenly;
-
     }
+    .jugadores {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 2vw;
+    
+    }
+
+    .jugador {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 100%;
+        width: 100%;
+        height: 100%;
+    }
+
     .tablero {
         order: 3;
     }
@@ -96,4 +128,11 @@ body{
         order:2;
     }
 
-  }
+    .opciones{
+        order: 1;
+        justify-content: center;
+        align-items: center;
+        gap: 1vw;
+    }
+
+}
