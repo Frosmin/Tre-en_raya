@@ -2,6 +2,7 @@
 juagor1 = "simon"
 juagor2 = "pepee"
 let = turnoActual = 1; 
+posiciones = [0, 0, 0, 0, 0, 0, 0, 0, 0]; 
 
 document.addEventListener('DOMContentLoaded', function() {
   actualizarInterfaz();
@@ -69,7 +70,7 @@ window.onclick = function(event) {
 
 
 
-posiciones = [0, 0, 0, 0, 0, 0, 0, 0, 0]; 
+
 
 
 function juega(numero){
