@@ -9,58 +9,59 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function actualizarInterfaz() {
-  const spanJugador1 = document.querySelector("#j1 div span");
-  const spanJugador2 = document.querySelector("#j2 div span");
-  spanJugador1.textContent = juagor1;
-  spanJugador2.textContent = juagor2;
+  const spanJugador1 = document.querySelector("#nombreJugador1");
+  const spanJugador2 = document.querySelector("#nombreJugador2");
+  if (spanJugador1) spanJugador1.textContent = juagor1;
+  if (spanJugador2) spanJugador2.textContent = juagor2;
+  console.log(juagor1, juagor2);
 }
 
 
-function cambiarNombre(numero){
-  const nombre = document.getElementById('nombreJugador').value.trim();
-  if (numero == 1){
-    juagor1 = nombre
-  }else{
-    juagor2 = nombre
+function cambiarNombre(numero) {
+  let nombre;
+  if (numero === 1) {
+    nombre = document.getElementById('nombreJugador1Input').value.trim();
+    juagor1 = nombre;
+  } else if (numero === 2) {
+    nombre = document.getElementById('nombreJugador2Input').value.trim();
+    juagor2 = nombre;
   }
-  console.log(juagor1, juagor2)
+  
   actualizarInterfaz();
 }
 
+// Modal para Jugador 1
+var modal1 = document.getElementById("myModal1");
+var btn1 = document.getElementById("myBtn1");
+var span1 = modal1.querySelector(".close"); // Selecciona el botón de cerrar dentro del modal1
 
+btn1.onclick = function() {
+  modal1.style.display = "block";
+};
 
+span1.onclick = function() {
+  modal1.style.display = "none";
+};
 
-function gana(){
-                                                                                                                                                                                                                  
-}
+// Modal para Jugador 2
+var modal2 = document.getElementById("myModal2");
+var btn2 = document.getElementById("myBtn2");
+var span2 = modal2.querySelector(".close"); // Selecciona el botón de cerrar dentro del modal2
 
+btn2.onclick = function() {
+  modal2.style.display = "block";
+};
 
-function funciona(num){
-    console.log(num)
-}
+span2.onclick = function() {
+  modal2.style.display = "none";
+};
 
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
+// Cerrar el modal al hacer clic fuera de él
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == modal1) {
+    modal1.style.display = "none";
   }
-}
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+};
