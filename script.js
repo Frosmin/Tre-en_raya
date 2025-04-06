@@ -103,3 +103,8 @@ function juega(numero){
     }
   }
 }
+
+
+function ver(){
+  console.log(posiciones);
+}
