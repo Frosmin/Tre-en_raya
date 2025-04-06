@@ -1,6 +1,7 @@
 
 juagor1 = "simon"
 juagor2 = "pepee"
+let = turnoActual = 1; 
 
 document.addEventListener('DOMContentLoaded', function() {
   actualizarInterfaz();
@@ -68,9 +69,37 @@ window.onclick = function(event) {
 
 
 
+posiciones = [0, 0, 0, 0, 0, 0, 0, 0, 0]; 
 
 
 function juega(numero){
 
-  
+  if (posiciones[numero] === 0) {
+    const celdas = document.querySelectorAll('.celda');
+    
+    if (turnoActual === 1) {
+
+      celdas[numero].textContent = 'X';
+      celdas[numero].style.fontSize = '10vw';
+      celdas[numero].style.display = 'flex';
+      celdas[numero].style.justifyContent = 'center';
+      celdas[numero].style.alignItems = 'center';
+      posiciones[numero] = 1;
+      turnoActual = 2;
+    } else {
+
+      celdas[numero].textContent = 'O';
+      celdas[numero].style.fontSize = '10vw';
+      celdas[numero].style.display = 'flex';
+      celdas[numero].style.justifyContent = 'center';
+      celdas[numero].style.alignItems = 'center';
+      posiciones[numero] = 2;
+      turnoActual = 1;
+    }
+    
+    const mensajeTurno = document.getElementById('smg');
+    if (mensajeTurno) {
+      mensajeTurno.textContent = "Turno de " + (turnoActual === 1 ? juagor1 : juagor2);
+    }
+  }
 }
