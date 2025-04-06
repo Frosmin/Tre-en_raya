@@ -85,6 +85,7 @@ function juega(numero){
       celdas[numero].style.justifyContent = 'center';
       celdas[numero].style.alignItems = 'center';
       posiciones[numero] = 1;
+      gana();
       turnoActual = 2;
     } else {
 
@@ -94,6 +95,7 @@ function juega(numero){
       celdas[numero].style.justifyContent = 'center';
       celdas[numero].style.alignItems = 'center';
       posiciones[numero] = 2;
+      gana();
       turnoActual = 1;
     }
     
@@ -102,7 +104,32 @@ function juega(numero){
       mensajeTurno.textContent = "Turno de " + (turnoActual === 1 ? juagor1 : juagor2);
     }
   }
+  gana();
 }
+
+
+function gana(){
+  const combinacionesGanadoras = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
+
+  for (const combinacion of combinacionesGanadoras) {
+    const [a, b, c] = combinacion;
+    if (turnoActual === posiciones[a] && turnoActual === posiciones[b] && turnoActual === posiciones[c]) {
+      console.log("Ganador:  ", turnoActual )
+    }
+  }
+  
+
+}
+
 
 
 function ver(){
