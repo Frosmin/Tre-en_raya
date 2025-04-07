@@ -87,6 +87,7 @@ function juega(numero){
       celdas[numero].style.alignItems = 'center';
       posiciones[numero] = 1;
       gana();
+      
       turnoActual = 2;
     } else {
 
@@ -96,7 +97,7 @@ function juega(numero){
       celdas[numero].style.justifyContent = 'center';
       celdas[numero].style.alignItems = 'center';
       posiciones[numero] = 2;
-      gana();
+      gana()
       turnoActual = 1;
     }
     
@@ -105,7 +106,7 @@ function juega(numero){
       mensajeTurno.textContent = "Turno de " + (turnoActual === 1 ? juagor1 : juagor2);
     }
   }
-  gana();
+  // gana();
 }
 
 
@@ -125,13 +126,37 @@ function gana(){
     const [a, b, c] = combinacion;
     if (turnoActual === posiciones[a] && turnoActual === posiciones[b] && turnoActual === posiciones[c]) {
       console.log("Ganador:  ", turnoActual )
-    }
+
+      const winner=document.querySelector("#ganador");
+      const s=turnoActual===1?juagor1:juagor2;
+      winner.innerHTML=`<p>El ganador es: ${s}</p>`
+
+      const celdas = document.querySelectorAll(".celda");
+      celdas.forEach(celda => {
+        celda.style.pointerEvents='none';
+      });
+      return turnoActual;
+    } 
   }
   
 
 }
 
-
+function reiniciar(){
+  const celdas = document.querySelectorAll(".celda");
+    celdas.forEach(celda => {
+      celda.style.pointerEvents='auto';
+      celda.textContent="";
+    });
+  const winner=document.querySelector("#ganador");
+  winner.innerHTML=``;
+  posiciones = [0, 0, 0, 0, 0, 0, 0, 0, 0]; 
+  turnoActual = 1; 
+  const mensajeTurno = document.getElementById('smg');
+  if (mensajeTurno) {
+    mensajeTurno.textContent = "Turno de " + (turnoActual === 1 ? juagor1 : juagor2);
+  }
+}
 
 function ver(){
   console.log(posiciones);
