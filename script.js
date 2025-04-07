@@ -81,10 +81,6 @@ function juega(numero){
     if (turnoActual === 1) {
 
       celdas[numero].textContent = 'X';
-      celdas[numero].style.fontSize = '10vw';
-      celdas[numero].style.display = 'flex';
-      celdas[numero].style.justifyContent = 'center';
-      celdas[numero].style.alignItems = 'center';
       posiciones[numero] = 1;
       gana();
       
@@ -92,10 +88,6 @@ function juega(numero){
     } else {
 
       celdas[numero].textContent = 'O';
-      celdas[numero].style.fontSize = '10vw';
-      celdas[numero].style.display = 'flex';
-      celdas[numero].style.justifyContent = 'center';
-      celdas[numero].style.alignItems = 'center';
       posiciones[numero] = 2;
       gana()
       turnoActual = 1;
